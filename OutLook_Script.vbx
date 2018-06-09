@@ -1,0 +1,21 @@
+Private Sub Items_ItemAdd(ByVal item As Object)
+On Error GoTo ErrorHandler
+Dim Msg As Outlook.MailItem
+' (2) only act if it's a MailItem
+If TypeName(item) = "MailItem" Then
+Set Msg = item
+  If InStr(Msg.Subject, "Mail Subject") > 0 Then
+    ' code to create and send reply should be placed here
+        prompt = "Do you want to run the Script ?"
+        answer = MsgBox(prompt, vbYesNo + vbQuestion, "Are you sure that ??")
+        If answer = vbYes Then
+            Shell ("python OutlookMail_To_Word.py")
+        End If
+  End If
+End If
+ProgramExit:
+Exit Sub
+ErrorHandler:
+MsgBox Err.Number & " - " & Err.Description
+Resume ProgramExit
+End Sub
