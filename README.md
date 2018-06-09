@@ -4,7 +4,7 @@ This repository consist of python script which will search for a particular subj
 After finding that mail, it will look for a particular keyword in the body of that mail (named as "Example :" in script). As the desired keyword matches, it will extract the words which are present after that keyword and append them in the list.
 
 Then it will put that extracted list in the .doc file, where you want it to be. For this, mergeField functionality of doc file is used. 
-Here, the doc file is 'ABC_Template.docx' and mergefield in doc file is <<Example>>
+Here, the doc file is 'ABC_Template.docx' and mergefield in doc file is "<< Example >>"
 
 For creating the mergeField:
   Insert --> Quick Parts --> Field --> MergeField
